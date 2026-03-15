@@ -1,6 +1,6 @@
 # LimpMaxAgent — Agente de IA com Function Calling
 
-Projeto de estudo: agente conversacional integrado ao SQL Server via **function calling**.
+Agente conversacional integrado ao SQL Server via function calling, construído em C# com arquitetura em camadas (API, Application, Domain, Infrastructure, CrossCutting)
 
 ---
 
