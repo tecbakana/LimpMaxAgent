@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "LimpMaxAgent.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:16324;http://localhost:16325"
+    }
+  }
+}
