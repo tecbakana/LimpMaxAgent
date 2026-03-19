@@ -36,7 +36,7 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 **Entrada:**
 ```json
 {
-  "mensagem": "Tem desinfetante 5L?",
+  "mensagem": "quais detergentes voce tem?",
   "clienteId": 1
 }
 ```
@@ -44,7 +44,7 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 **Saída:**
 ```json
 {
-  "resposta": "Sim! Temos o Desinfetante Pinho 5L por R$22,00, com 280 unidades disponíveis. Deseja fazer um pedido?"
+  "resposta": "Temos duas opções de detergente neutro:\n\n*   **Detergente Neutro 500ml**: R$2,50 a unidade, com 1200 unidades disponíveis.\n*   **Detergente Neutro 5L**: R$18,90 a unidade, com 350 unidades disponíveis.\n\nQual você gostaria de pedir ou tem interesse em saber mais?"
 }
 ```
 
