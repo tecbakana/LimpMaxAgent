@@ -1,8 +1,85 @@
-# LimpMaxAgent — Agente de IA com Function Calling
+# LimpMaxAgent — Agente de IA com acesso a dados via Function Calling
 
-Agente conversacional integrado ao SQL Server via function calling, construído em C# com arquitetura em camadas (API, Application, Domain, Infrastructure, CrossCutting)
+Agente conversacional capaz de consultar e executar operações em um banco de dados (SQL Server) através de IA, utilizando **function calling** para transformar linguagem natural em ações estruturadas.
 
----
+## 🚀 O que este projeto demonstra
+
+- Uso de IA como **componente funcional do sistema** (não apenas como assistente)
+- Integração entre LLM e backend estruturado (.NET + SQL Server)
+- Arquitetura em camadas (API, Application, Domain, Infrastructure)
+- Implementação de **tool calling controlado**, onde o modelo solicita ações e o sistema executa com segurança
+
+## 💡 Problema que resolve
+
+Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando linguagem natural, sem acesso direto ao banco ou lógica de negócio.
+
+## ⚙️ Como funciona
+
+1. Usuário envia mensagem (ex: “Tem desinfetante 5L?”)
+2. O agente (LLM) analisa a intenção
+3. Caso necessário, solicita uma função (ex: consultar estoque)
+4. O backend executa a consulta no SQL Server (via Dapper)
+5. O resultado é retornado ao modelo
+6. O modelo responde ao usuário em linguagem natural
+
+👉 O modelo **não acessa diretamente o banco**, apenas solicita ações ao sistema.
+
+## 🧠 Exemplo
+
+**Entrada:**
+```json
+{
+  "mensagem": "Tem desinfetante 5L?",
+  "clienteId": 1
+}
+```
+
+**Saída:**
+```json
+{
+  "resposta": "Sim! Temos o Desinfetante Pinho 5L por R$22,00, com 280 unidades disponíveis. Deseja fazer um pedido?"
+}
+```
+
+## 🧱 Arquitetura
+
+- API → Entrada HTTP e controle de fluxo  
+- Application → Orquestração do agente e regras  
+- Domain → Entidades e contratos  
+- Infrastructure → Acesso a dados (SQL Server + Dapper)  
+- CrossCutting → Injeção de dependência  
+
+## 🔧 Tecnologias
+
+- .NET / C#  
+- SQL Server  
+- Dapper  
+- Anthropic (Claude)  
+- Function Calling / Tool Use  
+
+## 🛠️ Funcionalidades do agente
+
+- Consultar estoque  
+- Registrar pedidos  
+- Consultar pedidos  
+- Cancelar pedidos  
+
+## ▶️ Como executar
+
+1. Criar banco via script SQL  
+2. Configurar API Key  
+3. Instalar dependências  
+4. Executar via Visual Studio (Swagger disponível)
+
+## 📌 Próximos passos
+
+- Autenticação JWT  
+- Persistência de histórico  
+- Cache de consultas  
+- Suporte a múltiplas tools  
+- Testes automatizados
+
+## Guia de Instalação e Uso
 
 ## Estrutura da Solution
 
