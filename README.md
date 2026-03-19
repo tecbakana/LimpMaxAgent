@@ -62,7 +62,7 @@ Permite que usuários interajam com sistemas (estoque, pedidos, etc.) usando lin
 - **Application** → Orquestração do agente e regras  
 - **Domain** → Entidades e contratos  
 - **Infrastructure** → Acesso a dados (SQL Server + Dapper)  
-- **CrossCutting** → Injeção de dependência  
+- **CrossCutting** → Injeção de dependência 
 
 ---
 
