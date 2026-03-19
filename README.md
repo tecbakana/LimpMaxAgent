@@ -108,7 +108,7 @@ Permite que usuários interajam com sistemas (estoque, pedidos, etc.) usando lin
 
 Essa abordagem permite integrar IA com sistemas de negócio de forma segura, evitando acesso direto ao banco enquanto mantém capacidade de automação real.
 
-# Guia de Instalação e Uso
+# 🔧 Detalhes técnicos
 
 ## Estrutura da Solution
 
