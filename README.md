@@ -29,6 +29,7 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 ## 📸 Example (Swagger)
 
 ![Swagger Example](./swaggerLimpaMax1.png)
+![Swagger Example](./swaggerLimpaMax2.png)
 
 ## 🧠 Exemplo
 
