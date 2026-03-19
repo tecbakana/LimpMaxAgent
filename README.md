@@ -1,4 +1,6 @@
 # LimpMaxAgent — Agente de IA com acesso a dados via Function Calling
+![.NET](https://img.shields.io/badge/.NET-6-blue)
+![AI](https://img.shields.io/badge/AI-LLM-green)
 
 Agente conversacional capaz de consultar e executar operações em um banco de dados (SQL Server) através de IA, utilizando **function calling** para transformar linguagem natural em ações estruturadas.
 
