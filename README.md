@@ -2,9 +2,9 @@
 ![.NET](https://img.shields.io/badge/.NET-6-blue)
 ![AI](https://img.shields.io/badge/AI-LLM-green)
 
-![pt-br]Agente de IA capaz de interagir com dados estruturados (SQL Server) utilizando linguagem natural por meio de function calling controlado. O projeto demonstra como LLMs podem executar operações reais com segurança, sem acessar diretamente o banco de dados.
+[pt-br] Agente de IA capaz de interagir com dados estruturados (SQL Server) utilizando linguagem natural por meio de function calling controlado. O projeto demonstra como LLMs podem executar operações reais com segurança, sem acessar diretamente o banco de dados.
 
-![eng-us]AI agent capable of interacting with structured data (SQL Server) using natural language through controlled function calling.
+[eng] AI agent capable of interacting with structured data (SQL Server) using natural language through controlled function calling.
 This project demonstrates how LLMs can safely execute real operations without direct access to the database.
 
 ## 🚀 O que este projeto demonstra
