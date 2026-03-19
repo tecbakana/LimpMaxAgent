@@ -24,9 +24,11 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 5. O resultado é retornado ao modelo
 6. O modelo responde ao usuário em linguagem natural
 
-[Swagger]<img src="swaggerLimpaMax1.png" />
-
 👉 O modelo **não acessa diretamente o banco**, apenas solicita ações ao sistema.
+
+## 📸 Example (Swagger)
+
+![Swagger Example](./swaggerLimpaMax1.png)
 
 ## 🧠 Exemplo
 
