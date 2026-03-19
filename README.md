@@ -2,7 +2,8 @@
 ![.NET](https://img.shields.io/badge/.NET-6-blue)
 ![AI](https://img.shields.io/badge/AI-LLM-green)
 
-Agente conversacional capaz de consultar e executar operações em um banco de dados (SQL Server) através de IA, utilizando **function calling** para transformar linguagem natural em ações estruturadas.
+AI agent capable of interacting with structured data (SQL Server) using natural language through controlled function calling.
+This project demonstrates how LLMs can safely execute real operations without direct access to the database.
 
 ## 🚀 O que este projeto demonstra
 
@@ -25,6 +26,7 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 6. O modelo responde ao usuário em linguagem natural
 
 👉 O modelo **não acessa diretamente o banco**, apenas solicita ações ao sistema.
+👉 The LLM does not access the database directly. All operations are executed through controlled backend functions.
 
 ## 📸 Example (Swagger)
 
