@@ -1,64 +1,70 @@
-# LimpMaxAgent — Agente de IA com acesso a dados via Function Calling
+# LimpMaxAgent — Agente de IA com Function Calling
 ![.NET](https://img.shields.io/badge/.NET-6-blue)
 ![AI](https://img.shields.io/badge/AI-LLM-green)
 
-[pt-br] Agente de IA capaz de interagir com dados estruturados (SQL Server) utilizando linguagem natural por meio de function calling controlado. O projeto demonstra como LLMs podem executar operações reais com segurança, sem acessar diretamente o banco de dados.
+Agente de IA capaz de interagir com dados estruturados (SQL Server) utilizando linguagem natural por meio de function calling controlado.
 
-[eng] AI agent capable of interacting with structured data (SQL Server) using natural language through controlled function calling.
-This project demonstrates how LLMs can safely execute real operations without direct access to the database.
+Este projeto demonstra como LLMs podem executar operações reais com segurança, sem acesso direto ao banco de dados.
 
-## 🚀 O que este projeto demonstra
+---
 
-- Uso de IA como **componente funcional do sistema** (não apenas como assistente)
-- Integração entre LLM e backend estruturado (.NET + SQL Server)
-- Arquitetura em camadas (API, Application, Domain, Infrastructure)
-- Implementação de **tool calling controlado**, onde o modelo solicita ações e o sistema executa com segurança
+## 🚀 Ideia principal
+
+O modelo de IA **não acessa o banco diretamente**.  
+Todas as operações são executadas por funções controladas no backend.
+
+---
 
 ## 💡 Problema que resolve
 
-Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando linguagem natural, sem acesso direto ao banco ou lógica de negócio.
+Permite que usuários interajam com sistemas (estoque, pedidos, etc.) usando linguagem natural, sem acesso direto ao banco ou à lógica de negócio.
+
+---
 
 ## ⚙️ Como funciona
 
-1. Usuário envia mensagem (ex: “Tem desinfetante 5L?”)
-2. O agente (LLM) analisa a intenção
-3. Caso necessário, solicita uma função (ex: consultar estoque)
-4. O backend executa a consulta no SQL Server (via Dapper)
-5. O resultado é retornado ao modelo
-6. O modelo responde ao usuário em linguagem natural
+1. Usuário envia uma mensagem (ex: “Tem desinfetante 5L?”)  
+2. O LLM interpreta a intenção  
+3. Caso necessário, solicita uma função (tool)  
+4. O backend executa a operação no SQL Server  
+5. O resultado é retornado ao modelo  
+6. O modelo responde em linguagem natural  
 
-👉 O modelo **não acessa diretamente o banco**, apenas solicita ações ao sistema.
-👉 The LLM does not access the database directly. All operations are executed through controlled backend functions.
+👉 O modelo apenas **solicita ações**, nunca executa diretamente.
 
-## 📸 Example (Swagger)
+---
+
+## 📸 Exemplo (Swagger)
 
 ![Swagger Example](./swaggerLimpaMax1.png)
 ![Swagger Example](./swaggerLimpaMax2.png)
 
-## 🧠 Exemplo
+---
 
-**Entrada:**
-```json
-{
-  "mensagem": "quais detergentes voce tem?",
-  "clienteId": 1
-}
-```
+## 🧠 Exemplo de fluxo
 
-**Saída:**
-```json
-{
-  "resposta": "Temos duas opções de detergente neutro:\n\n*   **Detergente Neutro 500ml**: R$2,50 a unidade, com 1200 unidades disponíveis.\n*   **Detergente Neutro 5L**: R$18,90 a unidade, com 350 unidades disponíveis.\n\nQual você gostaria de pedir ou tem interesse em saber mais?"
-}
-```
+**Usuário**
+"quais detergentes voce tem?"
+
+**Sistema:**
+- Identifica intenção de consulta  
+- Executa `consultar_estoque`  
+- Consulta o banco via Dapper  
+- Retorna os dados ao modelo  
+
+**Resposta:**
+"Temos duas opções de detergente neutro:\n\n*   **Detergente Neutro 500ml**: R$2,50 a unidade, com 1200 unidades disponíveis.\n*   **Detergente Neutro 5L**: R$18,90 a unidade, com 350 unidades disponíveis.\n\nQual você gostaria de pedir ou tem interesse em saber mais?"
+
 
 ## 🧱 Arquitetura
 
-- API → Entrada HTTP e controle de fluxo  
-- Application → Orquestração do agente e regras  
-- Domain → Entidades e contratos  
-- Infrastructure → Acesso a dados (SQL Server + Dapper)  
-- CrossCutting → Injeção de dependência  
+- **API** → Entrada HTTP (Controllers, Middlewares)  
+- **Application** → Orquestração do agente e regras  
+- **Domain** → Entidades e contratos  
+- **Infrastructure** → Acesso a dados (SQL Server + Dapper)  
+- **CrossCutting** → Injeção de dependência  
+
+---
 
 ## 🔧 Tecnologias
 
@@ -68,6 +74,8 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 - Anthropic (Claude)  
 - Function Calling / Tool Use  
 
+---
+
 ## 🛠️ Funcionalidades do agente
 
 - Consultar estoque  
@@ -75,12 +83,16 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 - Consultar pedidos  
 - Cancelar pedidos  
 
+---
+
 ## ▶️ Como executar
 
 1. Criar banco via script SQL  
 2. Configurar API Key  
 3. Instalar dependências  
-4. Executar via Visual Studio (Swagger disponível)
+4. Executar via Visual Studio (Swagger disponível)  
+
+---
 
 ## 📌 Próximos passos
 
@@ -88,9 +100,15 @@ Permitir que usuários interajam com sistemas (estoque, pedidos, etc.) usando li
 - Persistência de histórico  
 - Cache de consultas  
 - Suporte a múltiplas tools  
-- Testes automatizados
+- Testes automatizados  
 
-## Guia de Instalação e Uso
+---
+
+## 📍 Por que isso importa
+
+Essa abordagem permite integrar IA com sistemas de negócio de forma segura, evitando acesso direto ao banco enquanto mantém capacidade de automação real.
+
+# Guia de Instalação e Uso
 
 ## Estrutura da Solution
 
